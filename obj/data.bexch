@@ -1,19 +1,22 @@
-[GENERATED OBJECT FILE]
-b__data.o
+[MAPPING FILE]
+C:\Users\DANIIL~1\AppData\Local\Temp\GNAT-TEMP-000003.TMP
+[TOOLCHAIN VERSION]
+ada
+GNAT 2020
+[MAIN BASE NAME]
+data
+[COMPILER PATH]
+c:\gnat\2020\bin\gcc.exe
+[COMPILER LEADING SWITCHES]
+-c
+-x
+ada
+-gnatA
+[MAIN DEPENDENCY FILE]
+C:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\data.ali
+[DEPENDENCY FILES]
+[BINDING OPTIONS]
+gnatbind_prefix=
 [PROJECT FILES]
 C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr
-20200916073838 31c547c6521727851c2d9e1f733898f7
-[BOUND OBJECT FILES]
-C:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\data.o
-[GENERATED SOURCE FILES]
-b__data.ads
-b__data.adb
-b__data.ali
-[RESULTING OPTIONS]
--LC:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\
--LC:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\
--LC:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/
--static
--static-libgcc
-C:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnat.a
--Wl,--stack=0x2000000
+20200916091644 a9a9f64117c99e950a78dc5cc5fb8852

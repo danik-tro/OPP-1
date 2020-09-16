@@ -93,6 +93,7 @@ package body Data is
    function Vector_Multiplication(A, B: in Vector) return Integer is
       s: Integer;
    begin
+      s := 0;
       for i in 1..n loop
          s := s + A(i) * B(i);
       end loop;
@@ -202,7 +203,6 @@ package body Data is
    
    -- Calculation functions
    function Func1 (A, B, C, D: in Vector; MA, ME: in Matrix) return Integer is
-      e : Integer;
       S : Vector;
    begin
       S := Vector_Sum(C, Vector_Matrix_Multiplication(D,
@@ -213,19 +213,24 @@ package body Data is
    
    
    
-   function Func2 (MG, MH, MK, ML: in Matrix) return Matrix is 
+   function Func2 (MG, MH, MK: in Matrix; ML: in out Matrix) return Matrix is 
       MF : Matrix;
       MT : Matrix;
+      MTT : Matrix;
    begin
-      MT := Sum_Matrix(MG, Matrix_Transposition(Matrix_Multiplication(MH, MK)));
-      MF := Sub_Matrix(MT, Matrix_Transposition(ML));
+      MTT := Matrix_Multiplication(MH, MK);
+      Matrix_Transposition(MTT);
+      MT := Sum_Matrix(MG, MTT);
+      
+      Matrix_Transposition(ML);
+      MF := Sub_Matrix(MT, ML);
       Matrix_Sorting(MF);
       
       return MF;
    end Func2;
    
       
-   function Func3 (O, P, V : out Vector; MR, MS : in Matrix) return Vector is
+   function Func3 (O, P, V : in Vector; MR, MS : in Matrix) return Vector is
       S, L : Vector;
       MK : Matrix;
    begin
