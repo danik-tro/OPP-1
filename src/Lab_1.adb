@@ -1,5 +1,5 @@
 ----------------Main programm------------------------
---Parallel and distributed computing.
+--Parallel programming basics.
 --Labwork 1. Ada. Subprograms and packages
 --Trotsenko Daniil
 --IV-82
@@ -14,7 +14,7 @@ with Data, Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
 use  Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
 
 procedure Lab_1 is
-n : Integer := 3;
+n : Integer := 4;
 package data1 is new data(n);
 use data1;
 

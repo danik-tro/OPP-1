@@ -17,7 +17,7 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 RV MAX_TASKS=1+
 
-U lab_1%b		lab_1.adb		ac45268c NE OO SU
+U lab_1%b		lab_1.adb		74a092b8 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -51,7 +51,7 @@ D interfac.ads		20200819050646 5ab55268 interfaces%s
 D i-c.ads		20200819050646 c624fa43 interfaces.c%s
 D i-cstrin.ads		20200819050646 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
-D lab_1.adb		20200916124918 23a278e6 lab_1%b
+D lab_1.adb		20200916132406 fb47ccd2 lab_1%b
 D system.ads		20200819050648 32a08138 system%s
 D s-atacco.ads		20200819050646 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
