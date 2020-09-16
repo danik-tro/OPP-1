@@ -1,6 +1,6 @@
 V "GNAT Lib v2020"
 M P W=b
-A -gnatA
+A -gnatl=lab_1.lst
 A -mtune=generic
 A -march=x86-64
 P ZX
@@ -14,10 +14,9 @@ RV NO_STANDARD_STORAGE_POOLS
 RV NO_TASK_HIERARCHY
 RV NO_TASKING
 RV NO_DEFAULT_INITIALIZATION
-RV NO_IMPLEMENTATION_PRAGMAS
 RV MAX_TASKS=1+
 
-U lab_1%b		main.adb		ac45268c NE OO SU
+U lab_1%b		lab_1.adb		ac45268c NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -51,7 +50,7 @@ D interfac.ads		20200819050646 5ab55268 interfaces%s
 D i-c.ads		20200819050646 c624fa43 interfaces.c%s
 D i-cstrin.ads		20200819050646 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
-D main.adb		20200916124918 23a278e6 lab_1%b
+D lab_1.adb		20200916124918 23a278e6 lab_1%b
 D system.ads		20200819050648 32a08138 system%s
 D s-atacco.ads		20200819050646 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
@@ -104,7 +103,7 @@ X 13 data.ads
 . 75s10[18] 110s10[18] 111s10[18]
 30U14 Vector_Filling_Ones 19|36s10[18] 37s10[18] 38s10[18] 39s10[18] 106s10[18]
 . 107s10[18] 108s10[18]
-X 19 main.adb
+X 19 lab_1.adb
 16U11*Lab_1 16b11 135l5 135t10
 17i1 n{integer} 18r27 47r13 80r13 116r13
 18K9 data1[13|4] 19r5

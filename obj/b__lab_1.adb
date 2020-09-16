@@ -1,7 +1,7 @@
 pragma Warnings (Off);
 pragma Ada_95;
-pragma Source_File_Name (ada_main, Spec_File_Name => "b__main.ads");
-pragma Source_File_Name (ada_main, Body_File_Name => "b__main.adb");
+pragma Source_File_Name (ada_main, Spec_File_Name => "b__lab_1.ads");
+pragma Source_File_Name (ada_main, Body_File_Name => "b__lab_1.adb");
 pragma Suppress (Overflow_Check);
 
 with System.Restrictions;
@@ -311,7 +311,7 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   C:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\data.o
-   --   C:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\main.o
+   --   C:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\Lab_1.o
    --   -LC:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\
    --   -LC:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\
    --   -LC:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/

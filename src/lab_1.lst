@@ -1,0 +1,144 @@
+GNAT Community 2020 (20200818-93)
+Copyright 1992-2020, Free Software Foundation, Inc.
+
+Compiling: lab_1.adb
+Source file time stamp: 2020-09-16 12:49:18
+Compiled at: 2020-09-16 16:00:19
+
+     1. ----------------Main programm------------------------
+     2. --Parallel and distributed computing.
+     3. --Labwork 1. Ada. Subprograms and packages
+     4. --Trotsenko Daniil
+     5. --IV-82
+     6. --17.09.2020
+     7. --Func1: e = ((A+B)*(C+D*(MA*ME)))
+     8. --Func2: F = SORT(MG + TRANS(MH * MK) - TRANS(ML))
+     9. --Func3: S = (O + P + V) * (MR * MS)
+    10. -----------------------------------------------------
+    11.
+    12.
+    13. with Data, Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
+    14. use  Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
+    15.
+    16. procedure Lab_1 is
+    17. n : Integer := 3;
+    18. package data1 is new data(n);
+    19. use data1;
+    20.
+    21. procedure tasks is
+    22.
+    23.       --Task T1--
+    24.       task T1 is
+    25.          pragma Priority(1);
+    26.          pragma Storage_Size(100000);
+    27.          pragma CPU(1);
+    28.       end;
+    29.
+    30.       task body T1 is
+    31.          A, B, C, D: Vector;
+    32.          MA, ME : Matrix;
+    33.          e : Integer;
+    34.       begin
+    35.          Put_Line("task T1 started");
+    36.          Vector_Filling_Ones(A);
+    37.          Vector_Filling_Ones(B);
+    38.          Vector_Filling_Ones(C);
+    39.          Vector_Filling_Ones(D);
+    40.
+    41.          Matrix_Filling_Ones(MA);
+    42.          Matrix_Filling_Ones(ME);
+    43.
+    44.          e := Func1(A, B, C, D, MA, ME);
+    45.          delay(2.0);
+    46.
+    47.          if n < 7 then
+    48.             Put_Line("--Func1: e = ((A+B)*(C+D*(MA*ME)))--");
+    49.             Put("F1 : e = ");
+    50.             Put(e);
+    51.             New_Line;
+    52.             New_Line;
+    53.          end if;
+    54.
+    55.          Put_Line("task T1 finished");
+    56.          New_Line;
+    57.
+    58.       end T1;
+    59.
+    60.
+    61.       --Task T2--
+    62.       task T2 is
+    63.          pragma Priority(3);
+    64.          pragma Storage_Size(100000);
+    65.          pragma CPU(2);
+    66.       end;
+    67.
+    68.       task body T2 is
+    69.          MF, MG, MH, MK, ML : Matrix;
+    70.       begin
+    71.          Put_Line("task T2 started");
+    72.          Matrix_Filling_Ones(MG);
+    73.          Matrix_Filling_Ones(MH);
+    74.          Matrix_Filling_Ones(MK);
+    75.          Matrix_Filling_Ones(ML);
+    76.
+    77.          MF := Func2(MG, MH, MK, ML);
+    78.          delay(4.0);
+    79.
+    80.          if n < 7 then
+    81.             Put_Line("--Func2: F = SORT(MG + TRANS(MH * MK) - TRANS(ML))--");
+    82.             Put_Line("F2 : MF = ");
+    83.             Matrix_Output(MF);
+    84.
+    85.             New_Line;
+    86.             New_Line;
+    87.          end if;
+    88.
+    89.          Put_Line("task T2 finished");
+    90.          New_Line;
+    91.       end T2;
+    92.
+    93.       task T3 is
+    94.          pragma Priority(10);
+    95.          pragma Storage_Size(100000);
+    96.          pragma CPU(3);
+    97.       end;
+    98.
+    99.       task body T3 is
+   100.          O, P, V, S : Vector;
+   101.          MR, MS : Matrix;
+   102.       begin
+   103.          Put_Line("task T3 started");
+   104.          New_Line;
+   105.
+   106.          Vector_Filling_Ones(O);
+   107.          Vector_Filling_Ones(P);
+   108.          Vector_Filling_Ones(V);
+   109.
+   110.          Matrix_Filling_Ones(MR);
+   111.          Matrix_Filling_Ones(MS);
+   112.
+   113.          S := Func3(O, P, V, MR, MS);
+   114.          delay(5.0);
+   115.
+   116.          if n < 7 then
+   117.             Put_Line("--Func3: S = (O + P + V) * (MR * MS)--");
+   118.             Put_Line("F3 : S = ");
+   119.             Vector_Output(S);
+   120.
+   121.             New_Line;
+   122.             New_Line;
+   123.          end if;
+   124.
+   125.          Put_Line("task T3 finished");
+   126.          New_Line;
+   127.       end T3;
+   128.
+   129. begin
+   130.       null;
+   131. end tasks;
+   132.
+   133. begin
+   134.    tasks;
+   135. end Lab_1;
+
+ 135 lines: No errors

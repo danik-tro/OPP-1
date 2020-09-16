@@ -1,5 +1,5 @@
 [MAPPING FILE]
-C:\Users\DANIIL~1\AppData\Local\Temp\GNAT-TEMP-000003.TMP
+C:\Users\DANIIL~1\AppData\Local\Temp\GNAT-TEMP-000005.TMP
 [TOOLCHAIN VERSION]
 ada
 GNAT 2020
@@ -19,4 +19,4 @@ C:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\data.ali
 gnatbind_prefix=
 [PROJECT FILES]
 C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr
-20200916091644 a9a9f64117c99e950a78dc5cc5fb8852
+20200916125226 9911afebb1a572fbc860af4d0c11bd54

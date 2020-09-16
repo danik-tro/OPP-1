@@ -1,0 +1,178 @@
+V "GNAT Lib v2020"
+A -gnatl=data.lst
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+
+U data%b		data.adb		27e271a4 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+U data%s		data.ads		eff49dd0 BN EE NE OO PK GE
+
+D ada.ads		20200819050644 76789da1 ada%s
+D a-except.ads		20200819050644 a7106115 ada.exceptions%s
+D a-inteio.ads		20200819050644 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200819050644 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050644 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
+D a-tiinio.ads		20200819050644 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
+D data.ads		20200916105842 eff49dd0 data%s
+D data.adb		20200916105820 90a9b0bd data%b
+D interfac.ads		20200819050646 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
+D system.ads		20200819050648 32a08138 system%s
+D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050646 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050646 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050648 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050648 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050648 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050648 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050648 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050648 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050648 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050648 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050648 1b7d22d2 system.wch_con%s
+G a e
+G c Z s b [data standard 4 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 11|3r6 3r19 4r5 4r18
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 11|3w23 4r22
+X 7 a-textio.ads
+57K13*Text_IO 727e16 11|3w10 4r9
+465U14*Put 11|21s10 41s13
+508U14*Put_Line 11|43s10
+X 8 a-tiinio.ads
+59U14*Get 11|12s10[3|18] 30s13[3|18]
+80U14*Put 11|20s10[3|18] 40s13[3|18]
+X 10 data.ads
+2i4 n{integer} 39r30 40r30 11|11r19 19r19 28r19 29r22 38r19 39r22 53r19 54r22
+. 56r25 70r19 72r22 86r19 97r19 109r19 110r22 126r19 136r19 137r22 148r19
+. 149r22 161r19 162r22 174r19 175r22 184r19
+4k9*Data 2z4 39E11 44l5 44e9 11|6b14 243l6 243t10
+6A9*Vector(integer) 10r34 13r34 22r35 24r33 24r68 30r41 35r42 39c11 40r36
+. 11|9r34 17r34 66r48 66r77 67r10 83r33 83r48 84r10 93r44 106r39 182r41 197r42
+. 205r35 206r11 233r33 233r68 234r14
+7A9*Matrix(6A9) 16r34 19r34 22r54 23r35 23r54 23r69 24r53 27r41 33r43 40c11
+. 11|26r34 36r34 49r45 49r60 50r10 66r62 124r39 133r33 133r48 134r11 145r33
+. 145r48 146r11 158r45 172r41 191r43 205r54 216r35 216r54 216r69 217r12 218r12
+. 219r13 233r53 235r12
+10U14*Vector_Input 10<27 11|9b14 14l8 14t20
+10a27 A{6A9} 11|9b27 12m14 12r14
+13U14*Vector_Output 13>28 11|17b14 23l8 23t21
+13a28 A{6A9} 11|17b28 20r14
+16U14*Matrix_Input 16<27 11|26b14 33l8 33t20
+16a27 A{7A9} 11|26b27 30m17 30r17
+19U14*Matrix_Output 19>28 11|36b14 45l8 45t21
+19a28 A{7A9} 11|36b28 40r17
+22V13*Func1{integer} 22>20 22>23 22>26 22>29 22>43 22>47 11|205b13 212l8
+. 212t13
+22a20 A{6A9} 11|205b20 211r47
+22a23 B{6A9} 11|205b23 211r50
+22a26 C{6A9} 11|205b26 208r23
+22a29 D{6A9} 11|205b29 208r55
+22a43 MA{7A9} 11|205b43 209r45
+22a47 ME{7A9} 11|205b47 209r49
+23V13*Func2{7A9} 23>20 23>24 23>28 23=43 11|216b13 230l8 230t13
+23a20 MG{7A9} 11|216b20 223r24
+23a24 MH{7A9} 11|216b24 221r36
+23a28 MK{7A9} 11|216b28 221r40
+23a43 ML{7A9} 11|216b43 225m28 226r28
+24V13*Func3{6A9} 24>20 24>23 24>26 24>41 24>45 11|233b13 242l8 242t13
+24a20 O{6A9} 11|233b20 237r34
+24a23 P{6A9} 11|233b23 237r37
+24a26 V{6A9} 11|233b26 237r41
+24a41 MR{7A9} 11|233b41 238r35
+24a45 MS{7A9} 11|233b45 238r39
+27U14*Matrix_Filling_Ones 27<34 11|172b14 179l8 179t27
+27a34 A{7A9} 11|172b34 176m13
+30U14*Vector_Filling_Ones 30<34 11|182b14 187l8 187t27
+30a34 A{6A9} 11|182b34 185m10
+33U14*Matrix_Filling_Number 33<36 33>51 33>53 33>56 11|191b14 194l8 194t29
+33a36 A{7A9} 11|191b36 193m7
+33i51 i{integer} 11|191b51 193r9
+33i53 j{integer} 11|191b54 193r12
+33i56 number{integer} 11|191b57 193r18
+35U14*Vector_Fillig_Number 35<35 35>50 35>53 11|197b14 200l8 200t28
+35a35 A{6A9} 11|197b35 199m7
+35i50 i{integer} 11|197b50 199r9
+35i53 number{integer} 11|197b53 199r15
+X 11 data.adb
+11i11 i{integer} 12r16
+19i11 i{integer} 20r16
+28i11 i{integer} 30r19
+29i14 j{integer} 30r22
+38i11 i{integer} 40r19
+39i14 j{integer} 40r22
+49V13 Matrix_Multiplication{10|7A9} 49b13 49>35 49>38 63l8 63t29 209s23 221s14
+. 238s13
+49a35 A{10|7A9} 57r25
+49a38 B{10|7A9} 57r35
+50a7 P{10|7A9} 58m16 62r14
+51i7 S{integer} 55m13 57m16 57r21 58r27
+53i11 k{integer} 57r27 58r18
+54i14 i{integer} 57r40 58r21
+56i17 j{integer} 57r30 57r37
+66V13 Vector_Matrix_Multiplication{10|6A9} 66b13 66>42 66>56 79l8 79t36 208s26
+. 239s12
+66a42 A{10|6A9} 73r22
+66a56 B{10|7A9} 73r27
+67a7 P{10|6A9} 76m10 78r14
+68i7 s{integer} 71m10 73m13 73r18 76r18
+70i11 i{integer} 73r24 73r32 76r12
+72i14 j{integer} 73r29
+83V13 Vector_Sum{10|6A9} 83b13 83>24 83>27 90l8 90t18 208s12 211s36 237s12
+. 237s23
+83a24 A{10|6A9} 87r18
+83a27 B{10|6A9} 87r25
+84a7 S{10|6A9} 87m10 89r14
+86i11 i{integer} 87r12 87r20 87r27
+93V13 Vector_Multiplication{integer} 93b13 93>35 93>38 101l8 101t29 211s14
+93a35 A{10|6A9} 98r19
+93a38 B{10|6A9} 98r26
+94i7 s{integer} 96m7 98m10 98r15 100r14
+97i11 i{integer} 98r21 98r28
+106U14 Vector_Sorting 106b14 106=29 121l8 121t22 127s10
+106a29 A{10|6A9} 112r16 112r23 113r21 114m16 114r24 115m16
+107i7 S{integer} 113m16 115r24
+109i11 i{integer} 112r18 114r26 115r18
+110i14 j{integer} 112r25 113r23 114r18
+124U14 Matrix_Sorting 124b14 124=29 129l8 129t22 227s7
+124a29 A{10|7A9} 127m25 127r25
+126i11 i{integer} 127r27
+133V13 Sum_Matrix{10|7A9} 133b13 133>24 133>27 142l8 142t18 223s13
+133a24 A{10|7A9} 138r24
+133a27 B{10|7A9} 138r34
+134a7 C{10|7A9} 138m13 141r14
+136i11 i{integer} 138r15 138r26 138r36
+137i14 j{integer} 138r18 138r29 138r39
+145V13 Sub_Matrix{10|7A9} 145b13 145>24 145>27 154l8 154t18 226s13
+145a24 A{10|7A9} 150r24
+145a27 B{10|7A9} 150r34
+146a7 C{10|7A9} 150m13 153r14
+148i11 i{integer} 150r15 150r26 150r36
+149i14 j{integer} 150r18 150r29 150r39
+158U14 Matrix_Transposition 158b14 158=35 169l8 169t28 222s7 225s7
+158a35 A{10|7A9} 163r18 164m13 164r24 165m13
+159i7 S{integer} 163m13 165r24
+161i11 i{integer} 163r23 164r18 164r26 165r15
+162i14 j{integer} 163r20 164r15 164r29 165r18
+174i11 i{integer} 176r15
+175i14 j{integer} 176r18
+184i11 i{integer} 185r12
+206a7 S{10|6A9} 208m7 211r54
+217a7 MF{10|7A9} 226m7 227m22 227r22 229r14
+218a7 MT{10|7A9} 223m7 226r24
+219a7 MTT{10|7A9} 221m7 222m28 222r28 223r28
+234a7 S{10|6A9} 239m7 241r14
+234a10 L{10|6A9} 237m7 239r41
+235a7 MK{10|7A9} 238m7 239r44
+

@@ -1,0 +1,53 @@
+GNAT Community 2020 (20200818-93)
+Copyright 1992-2020, Free Software Foundation, Inc.
+
+Compiling: data.ads
+Source file time stamp: 2020-09-16 10:58:42
+Compiled at: 2020-09-16 16:00:19
+
+     1. generic
+     2.    n: Integer;
+     3.
+     4. package Data is
+     5.    --- Declaration of private types
+     6.    type Vector is private;
+     7.    type Matrix is private;
+     8.    
+     9.    -- Read Vector
+    10.    procedure Vector_Input(A: out Vector);
+    11.    
+    12.    -- Write Vector on screen
+    13.    procedure Vector_Output(A: in Vector);
+    14.    
+    15.    -- Read Matrix
+    16.    procedure Matrix_Input(A: out Matrix);
+    17.    
+    18.    -- Write Matrix on screen
+    19.    procedure Matrix_Output(A: in Matrix);
+    20.    
+    21.    -- Calculation functions
+    22.    function Func1 (A, B, C, D: in Vector; MA, ME: in Matrix) return Integer;
+    23.    function Func2 (MG, MH, MK: in Matrix; ML: in out Matrix) return Matrix;
+    24.    function Func3 (O, P, V : in Vector; MR, MS : in Matrix) return Vector;
+    25.    
+    26.    -- Filling matrix with ones
+    27.    procedure Matrix_Filling_Ones(A: out Matrix);
+    28.    
+    29.    -- Filling vector with ones
+    30.    procedure Vector_Filling_Ones(A: out Vector);
+    31.    
+    32.    
+    33.    procedure Matrix_Filling_Number(A: out Matrix; i,j, number:Integer);
+    34.    
+    35.    procedure Vector_Fillig_Number(A: out Vector; i, number:Integer);
+    36.    
+    37.    -- Determination private types
+    38.    private
+    39.      type Vector is array(1..n) of Integer;
+    40.      type Matrix is array(1..n) of Vector;
+    41.    
+    42.    
+    43.
+    44. end Data;
+
+ 44 lines: No errors

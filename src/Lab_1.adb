@@ -13,7 +13,7 @@
 with Data, Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
 use  Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
 
-procedure main is
+procedure Lab_1 is
 n : Integer := 3;
 package data1 is new data(n);
 use data1;
@@ -32,7 +32,7 @@ procedure tasks is
          MA, ME : Matrix;
          e : Integer;
       begin
-         Put_Line("T1 started");
+         Put_Line("task T1 started");
          Vector_Filling_Ones(A);
          Vector_Filling_Ones(B);
          Vector_Filling_Ones(C);
@@ -52,7 +52,7 @@ procedure tasks is
             New_Line;
          end if;
 
-         Put_Line("T1 finished");
+         Put_Line("task T1 finished");
          New_Line;
 
       end T1;
@@ -68,7 +68,7 @@ procedure tasks is
       task body T2 is
          MF, MG, MH, MK, ML : Matrix;
       begin
-         Put_Line("T2 started");
+         Put_Line("task T2 started");
          Matrix_Filling_Ones(MG);
          Matrix_Filling_Ones(MH);
          Matrix_Filling_Ones(MK);
@@ -86,12 +86,12 @@ procedure tasks is
             New_Line;
          end if;
 
-         Put_Line("T2 finished");
+         Put_Line("task T2 finished");
          New_Line;
       end T2;
 
       task T3 is
-         pragma Priority(5);
+         pragma Priority(10);
          pragma Storage_Size(100000);
          pragma CPU(3);
       end;
@@ -100,7 +100,7 @@ procedure tasks is
          O, P, V, S : Vector;
          MR, MS : Matrix;
       begin
-         Put_Line("T3 started");
+         Put_Line("task T3 started");
          New_Line;
 
          Vector_Filling_Ones(O);
@@ -122,7 +122,7 @@ procedure tasks is
             New_Line;
          end if;
 
-         Put_Line("T3 finished");
+         Put_Line("task T3 finished");
          New_Line;
       end T3;
 
@@ -132,4 +132,4 @@ end tasks;
 
 begin
    tasks;
-end main;
+end Lab_1;

@@ -1,0 +1,301 @@
+GNAT Community 2020 (20200818-93)
+Copyright 1992-2020, Free Software Foundation, Inc.
+
+Compiling: data.adb
+Source file time stamp: 2020-09-16 10:58:20
+Compiled at: 2020-09-16 16:00:19
+
+     1. --------------Package Data, body---------------
+     2.
+     3. with Ada.Text_IO, Ada.Integer_Text_IO;
+     4. use Ada.Text_IO, Ada.Integer_Text_IO;
+     5.
+     6. package body Data is 
+     7.    
+     8.    -- Read Vector
+     9.    procedure Vector_Input(A: out Vector) is 
+    10.    begin
+    11.       for i in 1..n loop
+    12.          Get(A(i));
+    13.       end loop;
+    14.    end Vector_Input;
+    15.      
+    16.    -- Write Vector on Screen
+    17.    procedure Vector_Output(A: in Vector) is
+    18.    begin
+    19.       for i in 1..n loop
+    20.          Put(A(i));
+    21.          Put(" ");
+    22.       end loop;
+    23.    end Vector_Output;
+    24.    
+    25.    -- Read Matrix
+    26.    procedure Matrix_Input(A: out Matrix) is
+    27.    begin
+    28.       for i in 1..n loop
+    29.          for j in 1..n loop
+    30.             Get(A(i)(j));
+    31.          end loop;
+    32.       end loop;
+    33.    end Matrix_Input;
+    34.    
+    35.    -- Write Matrix on Screen
+    36.    procedure Matrix_Output(A: in Matrix) is
+    37.    begin
+    38.       for i in 1..n loop
+    39.          for j in 1..n loop
+    40.             Put(A(i)(j));
+    41.             Put(" ");
+    42.          end loop;
+    43.          Put_Line(" ");
+    44.       end loop;
+    45.    end Matrix_Output;
+    46.    
+    47.    -- Multiplication of matrces
+    48.    
+    49.    function Matrix_Multiplication(A, B : in Matrix) return Matrix is
+    50.       P: Matrix;
+    51.       S: Integer;
+    52.    begin
+    53.       for k in 1..n loop
+    54.          for i in 1..n loop
+    55.             s := 0;
+    56.             for j in 1..n loop
+    57.                S := S + A(k)(j) * B(j)(i);
+    58.                P(k)(i) := s;
+    59.             end loop;
+    60.          end loop;
+    61.       end loop;
+    62.       return P;
+    63.    end Matrix_Multiplication;
+    64.    
+    65.    -- Multiplication of vector and Matrix
+    66.    function Vector_Matrix_Multiplication(A: in Vector; B: in Matrix) return Vector is
+    67.       P: Vector;
+    68.       s: Integer;
+    69.    begin
+    70.       for i in 1..n loop
+    71.          s := 0;
+    72.          for j in 1..n loop
+    73.             s := s + A(i)*B(j)(i);
+    74.          end loop;
+    75.          
+    76.          P(i) := s;
+    77.       end loop;
+    78.       return P;
+    79.    end Vector_Matrix_Multiplication;
+    80.    
+    81.    
+    82.    -- Sum of Vectors
+    83.    function Vector_Sum(A, B: in Vector) return Vector is
+    84.       S: Vector;
+    85.    begin
+    86.       for i in 1..n loop
+    87.          s(i) := A(i) + B(i);
+    88.       end loop;
+    89.       return s;
+    90.    end Vector_Sum;
+    91.    
+    92.    -- Multiplication of vectors
+    93.    function Vector_Multiplication(A, B: in Vector) return Integer is
+    94.       s: Integer;
+    95.    begin
+    96.       s := 0;
+    97.       for i in 1..n loop
+    98.          s := s + A(i) * B(i);
+    99.       end loop;
+   100.       return s;
+   101.    end Vector_Multiplication;
+   102.    
+   103.    
+   104.    
+   105.    -- Sorting of Vector
+   106.    procedure Vector_Sorting(A: in out Vector) is
+   107.       S: Integer;
+   108.    begin
+   109.       for i in 1..n loop
+   110.          for j in 1..n loop
+   111.             
+   112.             if A(i) > A(j) then 
+   113.                S := A(j);
+   114.                A(j) := A(i);
+   115.                A(i) := S;
+   116.             end if;
+   117.             
+   118.          end loop;
+   119.       end loop;
+   120.       
+   121.    end Vector_Sorting;
+   122.    
+   123.    -- Sorting Matrix
+   124.    procedure Matrix_Sorting(A: in out Matrix) is
+   125.    begin
+   126.       for i in 1..n loop
+   127.          Vector_Sorting(A(i));
+   128.       end loop;
+   129.    end Matrix_Sorting;
+   130.    
+   131.    
+   132.    --Sum Matrices
+   133.    function Sum_Matrix(A, B: in Matrix) return Matrix is
+   134.       C : Matrix;
+   135.    begin
+   136.       for i in 1..n loop
+   137.          for j in 1..n loop
+   138.             C(i)(j) := A(i)(j) + B(i)(j);
+   139.          end loop;
+   140.       end loop;
+   141.       return C;
+   142.    end Sum_Matrix;
+   143.    
+   144.    --Sub Matrices
+   145.    function Sub_Matrix(A, B: in Matrix) return Matrix is
+   146.       C : Matrix;
+   147.    begin
+   148.       for i in 1..n loop
+   149.          for j in 1..n loop
+   150.             C(i)(j) := A(i)(j) - B(i)(j);
+   151.          end loop;
+   152.       end loop;
+   153.       return C;
+   154.    end Sub_Matrix;
+   155.             
+   156.    
+   157.    -- Transposition of Matrix
+   158.    procedure Matrix_Transposition(A: in out Matrix) is 
+   159.       S: Integer;
+   160.    begin
+   161.       for i in 1..n loop
+   162.          for j in 1..n loop
+   163.             S := A(j)(i);
+   164.             A(j)(i) := A(i)(j);
+   165.             A(i)(j) := S;
+   166.             
+   167.          end loop;
+   168.       end loop;
+   169.    end Matrix_Transposition;
+   170.    
+   171.    -- Filling matrix with ones
+   172.    procedure Matrix_Filling_Ones(A: out Matrix) is 
+   173.    begin
+   174.       for i in 1..n loop
+   175.          for j in 1..n loop
+   176.             A(i)(j) := 1;
+   177.          end loop;
+   178.       end loop;
+   179.    end Matrix_Filling_Ones;
+   180.    
+   181.    -- Filling vector with ones
+   182.    procedure Vector_Filling_Ones(A: out Vector) is
+   183.    begin
+   184.       for i in 1..n loop
+   185.          A(i) := 1;
+   186.       end loop;
+   187.    end Vector_Filling_Ones;
+   188.    
+   189.    
+   190.    
+   191.    procedure Matrix_Filling_Number(A: out Matrix; i, j, number:Integer) is 
+   192.    begin
+   193.       A(i)(j) := number;
+   194.    end Matrix_Filling_Number;
+   195.    
+   196.    
+   197.    procedure Vector_Fillig_Number(A: out Vector; i, number: Integer) is 
+   198.    begin
+   199.       A(i) := number;
+   200.    end Vector_Fillig_Number;
+   201.    
+   202.    
+   203.    
+   204.    -- Calculation functions
+   205.    function Func1 (A, B, C, D: in Vector; MA, ME: in Matrix) return Integer is
+   206.       S : Vector;
+   207.    begin
+   208.       S := Vector_Sum(C, Vector_Matrix_Multiplication(D,
+   209.                       Matrix_Multiplication(MA, ME)));
+   210.       
+   211.       return Vector_Multiplication(Vector_Sum(A, B), S);
+   212.    end Func1;
+   213.    
+   214.    
+   215.    
+   216.    function Func2 (MG, MH, MK: in Matrix; ML: in out Matrix) return Matrix is 
+   217.       MF : Matrix;
+   218.       MT : Matrix;
+   219.       MTT : Matrix;
+   220.    begin
+   221.       MTT := Matrix_Multiplication(MH, MK);
+   222.       Matrix_Transposition(MTT);
+   223.       MT := Sum_Matrix(MG, MTT);
+   224.       
+   225.       Matrix_Transposition(ML);
+   226.       MF := Sub_Matrix(MT, ML);
+   227.       Matrix_Sorting(MF);
+   228.       
+   229.       return MF;
+   230.    end Func2;
+   231.    
+   232.       
+   233.    function Func3 (O, P, V : in Vector; MR, MS : in Matrix) return Vector is
+   234.       S, L : Vector;
+   235.       MK : Matrix;
+   236.    begin
+   237.       L := Vector_Sum(Vector_Sum(O, P), V);
+   238.       MK := Matrix_Multiplication(MR, MS);
+   239.       S := Vector_Matrix_Multiplication(L, MK);
+   240.       
+   241.       return S;
+   242.    end Func3; 
+   243.  end Data;
+
+Compiling: data.ads
+Source file time stamp: 2020-09-16 10:58:42
+Compiled at: 2020-09-16 16:00:19
+
+     1. generic
+     2.    n: Integer;
+     3.
+     4. package Data is
+     5.    --- Declaration of private types
+     6.    type Vector is private;
+     7.    type Matrix is private;
+     8.    
+     9.    -- Read Vector
+    10.    procedure Vector_Input(A: out Vector);
+    11.    
+    12.    -- Write Vector on screen
+    13.    procedure Vector_Output(A: in Vector);
+    14.    
+    15.    -- Read Matrix
+    16.    procedure Matrix_Input(A: out Matrix);
+    17.    
+    18.    -- Write Matrix on screen
+    19.    procedure Matrix_Output(A: in Matrix);
+    20.    
+    21.    -- Calculation functions
+    22.    function Func1 (A, B, C, D: in Vector; MA, ME: in Matrix) return Integer;
+    23.    function Func2 (MG, MH, MK: in Matrix; ML: in out Matrix) return Matrix;
+    24.    function Func3 (O, P, V : in Vector; MR, MS : in Matrix) return Vector;
+    25.    
+    26.    -- Filling matrix with ones
+    27.    procedure Matrix_Filling_Ones(A: out Matrix);
+    28.    
+    29.    -- Filling vector with ones
+    30.    procedure Vector_Filling_Ones(A: out Vector);
+    31.    
+    32.    
+    33.    procedure Matrix_Filling_Number(A: out Matrix; i,j, number:Integer);
+    34.    
+    35.    procedure Vector_Fillig_Number(A: out Vector; i, number:Integer);
+    36.    
+    37.    -- Determination private types
+    38.    private
+    39.      type Vector is array(1..n) of Integer;
+    40.      type Matrix is array(1..n) of Vector;
+    41.    
+    42.    
+    43.
+    44. end Data;
+
+ 243 lines: No errors
