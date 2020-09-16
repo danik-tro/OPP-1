@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr
+20200916070132 02c2e199f2e313925fc25deb67cae014
+[BOUND OBJECT FILES]
+C:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LC:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\
+-LC:\Users\Daniil Trotsenko\Documents\Educate\OPP\obj\
+-LC:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000
