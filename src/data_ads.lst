@@ -2,8 +2,8 @@ GNAT Community 2020 (20200818-93)
 Copyright 1992-2020, Free Software Foundation, Inc.
 
 Compiling: data.ads
-Source file time stamp: 2020-09-16 10:58:42
-Compiled at: 2020-09-16 16:00:19
+Source file time stamp: 2020-09-17 09:05:06
+Compiled at: 2020-09-17 12:09:17
 
      1. generic
      2.    n: Integer;
@@ -26,9 +26,9 @@ Compiled at: 2020-09-16 16:00:19
     19.    procedure Matrix_Output(A: in Matrix);
     20.    
     21.    -- Calculation functions
-    22.    function Func1 (A, B, C, D: in Vector; MA, ME: in Matrix) return Integer;
-    23.    function Func2 (MG, MH, MK: in Matrix; ML: in out Matrix) return Matrix;
-    24.    function Func3 (O, P, V : in Vector; MR, MS : in Matrix) return Vector;
+    22.    function Func1 (A, B, C: in Vector; MA, ME: in Matrix) return Integer;
+    23.    function Func2 (MH, MK, ML: in Matrix) return Matrix;
+    24.    function Func3 (V : in out Vector; MP, MR : in Matrix) return Vector;
     25.    
     26.    -- Filling matrix with ones
     27.    procedure Matrix_Filling_Ones(A: out Matrix);

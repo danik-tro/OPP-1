@@ -5,6 +5,36 @@ use Ada.Text_IO, Ada.Integer_Text_IO;
 
 package body Data is 
    
+   
+   
+   --Max in Matrix
+   function Matrix_Max(A: in Matrix) return Integer is
+      Max_m : Integer := -10000;
+   begin
+      for i in 1..n loop
+         for j in 1..n loop
+            if A(i)(j) > Max_m then 
+               Max_m := A(i)(j);
+            end if;
+         end loop;
+      end loop;
+      return Max_m;
+   end Matrix_Max;
+      
+   --Min in Matrix
+   function Matrix_Min(A: in Matrix) return Integer is
+      Min_m : Integer := 10000;
+   begin
+      for i in 1..n loop
+         for j in 1..n loop
+            if A(i)(j) < Min_m then 
+               Min_m := A(i)(j);
+            end if;
+         end loop;
+      end loop;
+      return Min_m;
+   end Matrix_Min;
+   
    -- Read Vector
    procedure Vector_Input(A: out Vector) is 
    begin
@@ -201,43 +231,48 @@ package body Data is
    
    
    
-   -- Calculation functions
-   function Func1 (A, B, C, D: in Vector; MA, ME: in Matrix) return Integer is
-      S : Vector;
+   -- Calculation function 1
+   function Func1 (A, B, C: in Vector; MA, ME: in Matrix) return Integer is
    begin
-      S := Vector_Sum(C, Vector_Matrix_Multiplication(D,
-                      Matrix_Multiplication(MA, ME)));
-      
-      return Vector_Multiplication(Vector_Sum(A, B), S);
+      return Vector_Multiplication(A,
+                               Vector_Matrix_Multiplication(
+                                   Vector_Sum(B, c),
+                                   Matrix_Multiplication(MA, ME)
+                                  ));
    end Func1;
    
    
-   
-   function Func2 (MG, MH, MK: in Matrix; ML: in out Matrix) return Matrix is 
-      MF : Matrix;
-      MT : Matrix;
-      MTT : Matrix;
+   -- Constant Matrix multiplication
+   procedure Constant_Matrix_Multiplication(a : Integer; B : in out Matrix) is
    begin
-      MTT := Matrix_Multiplication(MH, MK);
-      Matrix_Transposition(MTT);
-      MT := Sum_Matrix(MG, MTT);
-      
-      Matrix_Transposition(ML);
-      MF := Sub_Matrix(MT, ML);
-      Matrix_Sorting(MF);
-      
+      for i in 1..n loop
+         for j in 1..n loop
+            B(i)(j) := B(i)(j) * a;
+         end loop;
+      end loop;
+   end Constant_Matrix_Multiplication;
+   
+   -- Constant Vector Multiplication
+   procedure Constant_Vector_Multiplication(a : Integer; B : in out Vector) is
+   begin
+      for i in 1..n loop
+         B(i) := B(i) * a;
+      end loop;
+   end Constant_Vector_Multiplication;
+   
+   --Calculate function 2
+   function Func2 (MH, MK, ML: in Matrix) return Matrix is 
+      MF : Matrix;
+   begin
+      MF := Matrix_Multiplication(MK, ML);
+      Constant_Matrix_Multiplication(Matrix_Min(MH), MF);
       return MF;
    end Func2;
    
-      
-   function Func3 (O, P, V : in Vector; MR, MS : in Matrix) return Vector is
-      S, L : Vector;
-      MK : Matrix;
+   -- Calculate function 3   
+   function Func3 (V : in out Vector; MP, MR : in Matrix) return Vector is
    begin
-      L := Vector_Sum(Vector_Sum(O, P), V);
-      MK := Matrix_Multiplication(MR, MS);
-      S := Vector_Matrix_Multiplication(L, MK);
-      
-      return S;
+      Constant_Vector_Multiplication(Matrix_Max(Matrix_Multiplication(MP, MR)), V);
+      return V;
    end Func3; 
  end Data;

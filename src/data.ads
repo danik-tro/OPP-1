@@ -19,9 +19,9 @@ package Data is
    procedure Matrix_Output(A: in Matrix);
    
    -- Calculation functions
-   function Func1 (A, B, C, D: in Vector; MA, ME: in Matrix) return Integer;
-   function Func2 (MG, MH, MK: in Matrix; ML: in out Matrix) return Matrix;
-   function Func3 (O, P, V : in Vector; MR, MS : in Matrix) return Vector;
+   function Func1 (A, B, C: in Vector; MA, ME: in Matrix) return Integer;
+   function Func2 (MH, MK, ML: in Matrix) return Matrix;
+   function Func3 (V : in out Vector; MP, MR : in Matrix) return Vector;
    
    -- Filling matrix with ones
    procedure Matrix_Filling_Ones(A: out Matrix);

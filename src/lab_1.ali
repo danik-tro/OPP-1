@@ -16,7 +16,7 @@ RV NO_TASKING
 RV NO_DEFAULT_INITIALIZATION
 RV MAX_TASKS=1+
 
-U lab_1%b		lab_1.adb		ac45268c NE OO SU
+U lab_1%b		lab_1.adb		372886c6 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -44,13 +44,13 @@ D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
 D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
 D a-tiinio.ads		20200819050644 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
-D data.ads		20200916105842 eff49dd0 data%s
-D data.adb		20200916105820 90a9b0bd data%b
+D data.ads		20200917090506 faec24dc data%s
+D data.adb		20200917090612 1d35e433 data%b
 D interfac.ads		20200819050646 5ab55268 interfaces%s
 D i-c.ads		20200819050646 c624fa43 interfaces.c%s
 D i-cstrin.ads		20200819050646 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
-D lab_1.adb		20200916124918 23a278e6 lab_1%b
+D lab_1.adb		20200917090752 add761a0 lab_1%b
 D system.ads		20200819050648 32a08138 system%s
 D s-atacco.ads		20200819050646 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
@@ -83,52 +83,47 @@ X 5 a-inteio.ads
 18K13*Integer_Text_IO[11|46] 19|13w16 14r10
 X 10 a-textio.ads
 57K13*Text_IO 727e16 19|13w37 14r31
-264U14*New_Line 19|51s13 52s13 56s10 85s13 86s13 90s10 104s10 121s13 122s13
-. 126s10
-465U14*Put 19|49s13
-508U14*Put_Line 19|35s10 48s13 55s10 71s10 81s13 82s13 89s10 103s10 117s13
-. 118s13 125s10
+264U14*New_Line 19|50s13 51s13 55s10 83s13 84s13 88s10 102s10 117s13 118s13
+. 122s10
+465U14*Put 19|48s13
+508U14*Put_Line 19|35s10 47s13 54s10 70s10 79s13 80s13 87s10 101s10 113s13
+. 114s13 121s10
 X 11 a-tiinio.ads
-80U14*Put 19|50s13[5|18]
+80U14*Put 19|49s13[5|18]
 X 13 data.ads
 4k9*Data 44e9 19|13w6 18r22
-6A9 Vector(integer) 19|31r22[18] 100r23[18]
-7A9 Matrix(6A9[19|18]) 19|32r19[18] 69r31[18] 101r19[18]
-13U14 Vector_Output 19|119s13[18]
-19U14 Matrix_Output 19|83s13[18]
-22V13 Func1{integer} 19|44s15[18]
-23V13 Func2{7A9[19|18]} 19|77s16[18]
-24V13 Func3{6A9[19|18]} 19|113s15[18]
-27U14 Matrix_Filling_Ones 19|41s10[18] 42s10[18] 72s10[18] 73s10[18] 74s10[18]
-. 75s10[18] 110s10[18] 111s10[18]
-30U14 Vector_Filling_Ones 19|36s10[18] 37s10[18] 38s10[18] 39s10[18] 106s10[18]
-. 107s10[18] 108s10[18]
+6A9 Vector(integer) 19|31r19[18] 98r17[18]
+7A9 Matrix(6A9[19|18]) 19|32r19[18] 68r27[18] 99r19[18]
+13U14 Vector_Output 19|115s13[18]
+19U14 Matrix_Output 19|81s13[18]
+22V13 Func1{integer} 19|43s15[18]
+23V13 Func2{7A9[19|18]} 19|75s16[18]
+24V13 Func3{6A9[19|18]} 19|109s15[18]
+27U14 Matrix_Filling_Ones 19|40s10[18] 41s10[18] 71s10[18] 72s10[18] 73s10[18]
+. 106s10[18] 107s10[18]
+30U14 Vector_Filling_Ones 19|36s10[18] 37s10[18] 38s10[18] 104s10[18]
 X 19 lab_1.adb
-16U11*Lab_1 16b11 135l5 135t10
-17i1 n{integer} 18r27 47r13 80r13 116r13
+16U11*Lab_1 16b11 131l5 131t10
+17i1 n{integer} 18r27 46r13 78r13 112r13
 18K9 data1[13|4] 19r5
-21U11 tasks 21b11 131l5 131t10 134s4
-24t12 T1 30b17 58l11 58t13
-31a10 A{13|6A9[18]} 36m30 44r21
-31a13 B{13|6A9[18]} 37m30 44r24
-31a16 C{13|6A9[18]} 38m30 44r27
-31a19 D{13|6A9[18]} 39m30 44r30
-32a10 MA{13|7A9[18]} 41m30 44r33
-32a14 ME{13|7A9[18]} 42m30 44r37
-33i10 e{integer} 44m10 50r17
-62t12 T2 68b17 91l11 91t13
-69a10 MF{13|7A9[18]} 77m10 83r27
-69a14 MG{13|7A9[18]} 72m30 77r22
-69a18 MH{13|7A9[18]} 73m30 77r26
-69a22 MK{13|7A9[18]} 74m30 77r30
-69a26 ML{13|7A9[18]} 75m30 77m34 77r34
-93t12 T3 99b17 127l11 127t13
-100a10 O{13|6A9[18]} 106m30 113r21
-100a13 P{13|6A9[18]} 107m30 113r24
-100a16 V{13|6A9[18]} 108m30 113r27
-100a19 S{13|6A9[18]} 113m10 119r27
-101a10 MR{13|7A9[18]} 110m30 113r30
-101a14 MS{13|7A9[18]} 111m30 113r34
+21U11 tasks 21b11 127l5 127t10 130s4
+24t12 T1 30b17 57l11 57t13
+31a10 A{13|6A9[18]} 36m30 43r21
+31a13 B{13|6A9[18]} 37m30 43r24
+31a16 C{13|6A9[18]} 38m30 43r27
+32a10 MA{13|7A9[18]} 40m30 43r30
+32a14 ME{13|7A9[18]} 41m30 43r34
+33i10 d{integer} 43m10 49r17
+61t12 T2 67b17 89l11 89t13
+68a10 MF{13|7A9[18]} 75m10 81r27
+68a14 MH{13|7A9[18]} 71m30 75r22
+68a18 MK{13|7A9[18]} 72m30 75r25
+68a22 ML{13|7A9[18]} 73m30 75r29
+91t12 T3 97b17 123l11 123t13
+98a10 V{13|6A9[18]} 104m30 109m21 109r21
+98a13 O{13|6A9[18]} 109m10 115r27
+99a10 MR{13|7A9[18]} 106m30 109r24
+99a14 MP{13|7A9[18]} 107m30 109r28
 X 20 system.ads
 37K9*System 19|13r46 14r40 20|200e11
 X 25 s-multip.ads

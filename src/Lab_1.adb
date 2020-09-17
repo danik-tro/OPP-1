@@ -4,9 +4,9 @@
 --Trotsenko Daniil
 --IV-82
 --17.09.2020
---Func1: e = ((A+B)*(C+D*(MA*ME)))
---Func2: F = SORT(MG + TRANS(MH * MK) - TRANS(ML))
---Func3: S = (O + P + V) * (MR * MS)
+--Func1: d = (A*((B+C)*(MA*ME)))
+--Func2: MF = MIN(MH)*MK*ML
+--Func3: O = MAX(MP*MR)*V
 -----------------------------------------------------
 
 
@@ -28,26 +28,25 @@ procedure tasks is
       end;
 
       task body T1 is
-         A, B, C, D: Vector;
+         A, B, C: Vector;
          MA, ME : Matrix;
-         e : Integer;
+         d : Integer;
       begin
          Put_Line("task T1 started");
          Vector_Filling_Ones(A);
          Vector_Filling_Ones(B);
          Vector_Filling_Ones(C);
-         Vector_Filling_Ones(D);
 
          Matrix_Filling_Ones(MA);
          Matrix_Filling_Ones(ME);
 
-         e := Func1(A, B, C, D, MA, ME);
+         d := Func1(A, B, C, MA, ME);
          delay(2.0);
 
          if n < 7 then
-            Put_Line("--Func1: e = ((A+B)*(C+D*(MA*ME)))--");
-            Put("F1 : e = ");
-            Put(e);
+            Put_Line("--Func1: d = (A*((B+C)*(MA*ME)))--");
+            Put("F1 : d = ");
+            Put(d);
             New_Line;
             New_Line;
          end if;
@@ -66,19 +65,18 @@ procedure tasks is
       end;
 
       task body T2 is
-         MF, MG, MH, MK, ML : Matrix;
+         MF, MH, MK, ML : Matrix;
       begin
          Put_Line("task T2 started");
-         Matrix_Filling_Ones(MG);
          Matrix_Filling_Ones(MH);
          Matrix_Filling_Ones(MK);
          Matrix_Filling_Ones(ML);
 
-         MF := Func2(MG, MH, MK, ML);
+         MF := Func2(MH,MK, ML);
          delay(4.0);
 
          if n < 7 then
-            Put_Line("--Func2: F = SORT(MG + TRANS(MH * MK) - TRANS(ML))--");
+            Put_Line("--Func2: MF = MIN(MH)*MK*ML--");
             Put_Line("F2 : MF = ");
             Matrix_Output(MF);
 
@@ -97,26 +95,24 @@ procedure tasks is
       end;
 
       task body T3 is
-         O, P, V, S : Vector;
-         MR, MS : Matrix;
+         V, O : Vector;
+         MR, MP : Matrix;
       begin
          Put_Line("task T3 started");
          New_Line;
 
-         Vector_Filling_Ones(O);
-         Vector_Filling_Ones(P);
          Vector_Filling_Ones(V);
 
          Matrix_Filling_Ones(MR);
-         Matrix_Filling_Ones(MS);
+         Matrix_Filling_Ones(MP);
 
-         S := Func3(O, P, V, MR, MS);
+         O := Func3(V, MR, MP);
          delay(5.0);
 
          if n < 7 then
-            Put_Line("--Func3: S = (O + P + V) * (MR * MS)--");
-            Put_Line("F3 : S = ");
-            Vector_Output(S);
+            Put_Line("--Func3: O = MAX(MP*MR)*V--");
+            Put_Line("F3 : O = ");
+            Vector_Output(O);
 
             New_Line;
             New_Line;

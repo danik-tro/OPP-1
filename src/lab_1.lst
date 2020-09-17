@@ -2,18 +2,18 @@ GNAT Community 2020 (20200818-93)
 Copyright 1992-2020, Free Software Foundation, Inc.
 
 Compiling: lab_1.adb
-Source file time stamp: 2020-09-16 12:49:18
-Compiled at: 2020-09-16 16:00:19
+Source file time stamp: 2020-09-17 09:07:52
+Compiled at: 2020-09-17 12:09:17
 
      1. ----------------Main programm------------------------
-     2. --Parallel and distributed computing.
+     2. --Parallel programming basics.
      3. --Labwork 1. Ada. Subprograms and packages
      4. --Trotsenko Daniil
      5. --IV-82
      6. --17.09.2020
-     7. --Func1: e = ((A+B)*(C+D*(MA*ME)))
-     8. --Func2: F = SORT(MG + TRANS(MH * MK) - TRANS(ML))
-     9. --Func3: S = (O + P + V) * (MR * MS)
+     7. --Func1: d = (A*((B+C)*(MA*ME)))
+     8. --Func2: MF = MIN(MH)*MK*ML
+     9. --Func3: O = MAX(MP*MR)*V
     10. -----------------------------------------------------
     11.
     12.
@@ -21,7 +21,7 @@ Compiled at: 2020-09-16 16:00:19
     14. use  Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
     15.
     16. procedure Lab_1 is
-    17. n : Integer := 3;
+    17. n : Integer := 4;
     18. package data1 is new data(n);
     19. use data1;
     20.
@@ -35,110 +35,106 @@ Compiled at: 2020-09-16 16:00:19
     28.       end;
     29.
     30.       task body T1 is
-    31.          A, B, C, D: Vector;
+    31.          A, B, C: Vector;
     32.          MA, ME : Matrix;
-    33.          e : Integer;
+    33.          d : Integer;
     34.       begin
     35.          Put_Line("task T1 started");
     36.          Vector_Filling_Ones(A);
     37.          Vector_Filling_Ones(B);
     38.          Vector_Filling_Ones(C);
-    39.          Vector_Filling_Ones(D);
-    40.
-    41.          Matrix_Filling_Ones(MA);
-    42.          Matrix_Filling_Ones(ME);
-    43.
-    44.          e := Func1(A, B, C, D, MA, ME);
-    45.          delay(2.0);
-    46.
-    47.          if n < 7 then
-    48.             Put_Line("--Func1: e = ((A+B)*(C+D*(MA*ME)))--");
-    49.             Put("F1 : e = ");
-    50.             Put(e);
+    39.
+    40.          Matrix_Filling_Ones(MA);
+    41.          Matrix_Filling_Ones(ME);
+    42.
+    43.          d := Func1(A, B, C, MA, ME);
+    44.          delay(2.0);
+    45.
+    46.          if n < 7 then
+    47.             Put_Line("--Func1: d = (A*((B+C)*(MA*ME)))--");
+    48.             Put("F1 : d = ");
+    49.             Put(d);
+    50.             New_Line;
     51.             New_Line;
-    52.             New_Line;
-    53.          end if;
-    54.
-    55.          Put_Line("task T1 finished");
-    56.          New_Line;
-    57.
-    58.       end T1;
+    52.          end if;
+    53.
+    54.          Put_Line("task T1 finished");
+    55.          New_Line;
+    56.
+    57.       end T1;
+    58.
     59.
-    60.
-    61.       --Task T2--
-    62.       task T2 is
-    63.          pragma Priority(3);
-    64.          pragma Storage_Size(100000);
-    65.          pragma CPU(2);
-    66.       end;
-    67.
-    68.       task body T2 is
-    69.          MF, MG, MH, MK, ML : Matrix;
-    70.       begin
-    71.          Put_Line("task T2 started");
-    72.          Matrix_Filling_Ones(MG);
-    73.          Matrix_Filling_Ones(MH);
-    74.          Matrix_Filling_Ones(MK);
-    75.          Matrix_Filling_Ones(ML);
-    76.
-    77.          MF := Func2(MG, MH, MK, ML);
-    78.          delay(4.0);
-    79.
-    80.          if n < 7 then
-    81.             Put_Line("--Func2: F = SORT(MG + TRANS(MH * MK) - TRANS(ML))--");
-    82.             Put_Line("F2 : MF = ");
-    83.             Matrix_Output(MF);
-    84.
-    85.             New_Line;
-    86.             New_Line;
-    87.          end if;
-    88.
-    89.          Put_Line("task T2 finished");
-    90.          New_Line;
-    91.       end T2;
-    92.
-    93.       task T3 is
-    94.          pragma Priority(10);
-    95.          pragma Storage_Size(100000);
-    96.          pragma CPU(3);
-    97.       end;
-    98.
-    99.       task body T3 is
-   100.          O, P, V, S : Vector;
-   101.          MR, MS : Matrix;
-   102.       begin
-   103.          Put_Line("task T3 started");
-   104.          New_Line;
+    60.       --Task T2--
+    61.       task T2 is
+    62.          pragma Priority(3);
+    63.          pragma Storage_Size(100000);
+    64.          pragma CPU(2);
+    65.       end;
+    66.
+    67.       task body T2 is
+    68.          MF, MH, MK, ML : Matrix;
+    69.       begin
+    70.          Put_Line("task T2 started");
+    71.          Matrix_Filling_Ones(MH);
+    72.          Matrix_Filling_Ones(MK);
+    73.          Matrix_Filling_Ones(ML);
+    74.
+    75.          MF := Func2(MH,MK, ML);
+    76.          delay(4.0);
+    77.
+    78.          if n < 7 then
+    79.             Put_Line("--Func2: MF = MIN(MH)*MK*ML--");
+    80.             Put_Line("F2 : MF = ");
+    81.             Matrix_Output(MF);
+    82.
+    83.             New_Line;
+    84.             New_Line;
+    85.          end if;
+    86.
+    87.          Put_Line("task T2 finished");
+    88.          New_Line;
+    89.       end T2;
+    90.
+    91.       task T3 is
+    92.          pragma Priority(10);
+    93.          pragma Storage_Size(100000);
+    94.          pragma CPU(3);
+    95.       end;
+    96.
+    97.       task body T3 is
+    98.          V, O : Vector;
+    99.          MR, MP : Matrix;
+   100.       begin
+   101.          Put_Line("task T3 started");
+   102.          New_Line;
+   103.
+   104.          Vector_Filling_Ones(V);
    105.
-   106.          Vector_Filling_Ones(O);
-   107.          Vector_Filling_Ones(P);
-   108.          Vector_Filling_Ones(V);
-   109.
-   110.          Matrix_Filling_Ones(MR);
-   111.          Matrix_Filling_Ones(MS);
-   112.
-   113.          S := Func3(O, P, V, MR, MS);
-   114.          delay(5.0);
-   115.
-   116.          if n < 7 then
-   117.             Put_Line("--Func3: S = (O + P + V) * (MR * MS)--");
-   118.             Put_Line("F3 : S = ");
-   119.             Vector_Output(S);
+   106.          Matrix_Filling_Ones(MR);
+   107.          Matrix_Filling_Ones(MP);
+   108.
+   109.          O := Func3(V, MR, MP);
+   110.          delay(5.0);
+   111.
+   112.          if n < 7 then
+   113.             Put_Line("--Func3: O = MAX(MP*MR)*V--");
+   114.             Put_Line("F3 : O = ");
+   115.             Vector_Output(O);
+   116.
+   117.             New_Line;
+   118.             New_Line;
+   119.          end if;
    120.
-   121.             New_Line;
-   122.             New_Line;
-   123.          end if;
+   121.          Put_Line("task T3 finished");
+   122.          New_Line;
+   123.       end T3;
    124.
-   125.          Put_Line("task T3 finished");
-   126.          New_Line;
-   127.       end T3;
+   125. begin
+   126.       null;
+   127. end tasks;
    128.
    129. begin
-   130.       null;
-   131. end tasks;
-   132.
-   133. begin
-   134.    tasks;
-   135. end Lab_1;
+   130.    tasks;
+   131. end Lab_1;
 
- 135 lines: No errors
+ 131 lines: No errors
