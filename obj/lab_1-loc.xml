@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr</vfs_file>
+  <Project >
     <file_marker column=" 31" line=" 2" >
       <vfs_project>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr</vfs_project>
       <vfs_file>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\src\Lab_1.adb</vfs_file>
@@ -98,7 +97,15 @@
       <vfs_project>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr</vfs_project>
       <vfs_file>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\src\Lab_1.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 3" line=" 9" >
+    <file_marker column=" 3" line=" 9" >
+      <vfs_project>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr</vfs_project>
+      <vfs_file>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\src\Lab_1.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 92" >
+      <vfs_project>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr</vfs_project>
+      <vfs_file>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\src\Lab_1.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 26" line=" 62" >
       <vfs_project>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\lab_1.gpr</vfs_project>
       <vfs_file>C:\Users\Daniil Trotsenko\Documents\Educate\OPP\src\Lab_1.adb</vfs_file>
     </file_marker>

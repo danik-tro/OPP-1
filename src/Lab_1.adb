@@ -14,7 +14,7 @@ with Data, Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
 use  Ada.Integer_Text_IO, Ada.Text_IO, System.Multiprocessors;
 
 procedure Lab_1 is
-n : Integer := 4;
+n : Integer := 60;
 package data1 is new data(n);
 use data1;
 
@@ -59,7 +59,7 @@ procedure tasks is
 
       --Task T2--
       task T2 is
-         pragma Priority(3);
+         pragma Priority(2);
          pragma Storage_Size(100000);
          pragma CPU(2);
       end;
@@ -89,7 +89,7 @@ procedure tasks is
       end T2;
 
       task T3 is
-         pragma Priority(10);
+         pragma Priority(3);
          pragma Storage_Size(100000);
          pragma CPU(3);
       end;
