@@ -1,3 +1,7 @@
+/*
+    Class Matrix
+*/
+
 package com.company;
 
 public class Matrix {

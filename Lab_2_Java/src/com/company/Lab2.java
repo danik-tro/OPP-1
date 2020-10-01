@@ -4,7 +4,7 @@
      --Labwork 2. Threads in Java
      --Trotsenko Daniil
      --IV-82
-     --17.09.2020
+     --1.10.2020
      --Func1: d = (A*((B+C)*(MA*ME)))
      --Func2: MF = MIN(MH)*MK*ML
      --Func3: O = MAX(MP*MR)*V
@@ -17,6 +17,7 @@ package com.company;
 import java.util.Scanner;
 import java.util.concurrent.Semaphore;
 
+//Thread 1
 class T1 extends Thread {
 
     private Semaphore semaphore;
@@ -50,9 +51,11 @@ class T1 extends Thread {
                 System.out.print("Input N for T1 = ");
                 n = in.nextInt();
 
-                A = new Vector(n); B = new Vector(n); C = new Vector(n);
-                MA = new Matrix(n); ME = new Matrix(n);
-
+                A = new Vector(n);
+                B = new Vector(n);
+                C = new Vector(n);
+                MA = new Matrix(n);
+                ME = new Matrix(n);
 
 
                 A.ReadVector("A");
@@ -61,21 +64,24 @@ class T1 extends Thread {
 
                 MA.ReadMatrix("MA");
                 ME.ReadMatrix("ME");
-
+                semaphore.release();
             }
 
 
             d = A.MultiplicationVectors(B.SumVectors(C).MultiplicationVectorMatrix(MA.MultiplicationMatrices(ME)));
 
 
+            if (n <= 5) {
 
-            Thread.sleep(100);
+            semaphore.acquire(1);
 
             System.out.println();
             System.out.println("----- Func1: d = (A*((B+C)*(MA*ME))) -----");
             System.out.println("----- d = " + d + " -----");
             System.out.println();
             semaphore.release();
+        }
+
         } catch (InterruptedException e) {
             System.out.printf("Thread has been interrupted");
         }
@@ -86,6 +92,7 @@ class T1 extends Thread {
 }
 
 
+//Thread 2
 class T2 extends Thread {
 
     private int n = 4;
@@ -122,7 +129,7 @@ class T2 extends Thread {
                 MH.ReadMatrix("MH");
                 MK.ReadMatrix("MK");
                 ML.ReadMatrix("ML");
-
+                semaphore.release();
 
             }
 
@@ -130,13 +137,15 @@ class T2 extends Thread {
 
             MF = MK.MultiplicationMatrices(ML).MatrixMultiplicationOnConstant(MH.MinOnMatrix());
 
+            if (n <= 5) {
+                semaphore.acquire(1);
 
-            Thread.sleep(800);
+                System.out.println("-----Func2: MF = MIN(MH)*MK*ML-----");
+                MF.Print("MF");
+                semaphore.release();
+            }
 
-            System.out.println("-----Func2: MF = MIN(MH)*MK*ML-----");
-            MF.Print("MF");
 
-            semaphore.release();
         } catch (InterruptedException e) {
             System.out.printf("Thread has been interrupted");
         }
@@ -147,6 +156,7 @@ class T2 extends Thread {
     }
 }
 
+// Thread 3
 class T3 extends Thread {
     private int n = 4;
 
@@ -188,16 +198,19 @@ class T3 extends Thread {
 
                 MP.ReadMatrix("MP");
                 MR.ReadMatrix("MR");
-
+                semaphore.release();
             }
 
 
             O = V.VectorMultiplicationConstant(MP.MultiplicationMatrices(MR).MaxOnMatrix());
-            Thread.sleep(1200);
-            System.out.println("-----Func3: O = MAX(MP*MR)*V-----");
-            O.Print("O");
 
-            semaphore.release();
+            if (n <= 5) {
+                semaphore.acquire(1);
+                System.out.println("-----Func3: O = MAX(MP*MR)*V-----");
+                O.Print("O");
+                semaphore.release();
+            }
+
         } catch (InterruptedException e) {
             System.out.printf("Thread has been interrupted");
         }
@@ -208,8 +221,8 @@ class T3 extends Thread {
 }
 
 
-
-public class Main {
+//Main Thread
+public class Lab2 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -221,7 +234,7 @@ public class Main {
             System.out.println("OK");
         }
 
-        System.out.println("Main thread started...");
+        System.out.println("Lab2 thread started...");
 
         Semaphore sem = new Semaphore(1);
 
@@ -231,7 +244,7 @@ public class Main {
 
         t1.setPriority(1);
         t2.setPriority(3);
-        t3.setPriority(4);
+        t3.setPriority(5);
 
         t1.start();
         t2.start();
@@ -244,7 +257,7 @@ public class Main {
         } catch(InterruptedException e) {
             System.out.printf("%s has been interrupted", Thread.currentThread().getName());
         }
-        System.out.println("Main thread finished...");
+        System.out.println("Lab2 thread finished...");
         in.close();
     }
 }
